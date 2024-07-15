@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  user = import ./user.nix;
+  user = import /Users/A92638031/.config/nix/user.nix;
 in 
 {
   home.stateVersion = "24.05";

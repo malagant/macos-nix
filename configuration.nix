@@ -1,8 +1,9 @@
 { pkgs, lib, ... }:
+let
+  user = import ./user.nix;
+in
 {
   # Nix configuration ------------------------------------------------------------------------------
-  user = import ./user.nix;
-
   nix.settings.substituters = [
     "https://cache.nixos.org/"
   ];
@@ -14,6 +15,9 @@
   ];
 
   nix.configureBuildUsers = true;
+
+  nix.gc.automatic = true;
+  nix.gc.options = "--max-freed $((25 * 1024**3 - 1024 * $(df -P -k /nix/store | tail -n 1 | awk '{ print $4 }')))";
 
   # Enable experimental nix command and flakes
   # nix.package = pkgs.nixUnstable;
@@ -41,20 +45,20 @@
   # `home-manager` currently has issues adding them to `~/Applications`
   # Issue: https://github.com/nix-community/home-manager/issues/1341
   environment.systemPackages = with pkgs; [
-      alacritty
-      docker
-      docker-compose
-      git
-      iterm2
-      kitty
-      neovim
-      podman
-      podman-tui
-      podman-compose
-      raycast
-      vim
-      wezterm
-      wget
+    alacritty
+    docker
+    docker-compose
+    git
+    iterm2
+    kitty
+    neovim
+    podman
+    podman-tui
+    podman-compose
+    raycast
+    vim
+    wezterm
+    wget
   ];
 
   # https://github.com/nix-community/home-manager/issues/423
@@ -64,5 +68,5 @@
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
 
-  users.users.A92638031.home = "${user.homeDir}";
+  users.users.${user.name}.home = "${user.homeDir}";
 }
