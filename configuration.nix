@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   # Nix configuration ------------------------------------------------------------------------------
+  user = import ./user.nix;
 
   nix.settings.substituters = [
     "https://cache.nixos.org/"
@@ -9,7 +10,7 @@
     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
   ];
   nix.settings.trusted-users = [
-    "A92638031"
+    "${user.name}"
   ];
 
   nix.configureBuildUsers = true;
@@ -63,5 +64,5 @@
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
 
-  users.users.A92638031.home = "/Users/A92638031";
+  users.users.A92638031.home = "${user.homeDir}";
 }

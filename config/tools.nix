@@ -1,17 +1,23 @@
 { unstable, ... }:
 {
   programs = {
+    htop = { 
+      enable = true; 
+      settings = { 
+        show_program_path = true;
+      };
+    };
+    direnv = {
+      enable = true;
+      nix-direnv = {
+        enable = true;
+      };
+    };
     bat = {
       enable = true;
     };
     eza = {
       enable = true;
-    };
-    fzf = {
-      package = unstable.fzf;
-      tmux = {
-        enableShellIntegration = true;
-      };
     };
   };
 }

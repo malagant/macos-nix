@@ -10,16 +10,18 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
+  outputs = inputs@{ nixpkgs, flake-utils, home-manager, darwin, ... }:
   let 
-    username = "A92638031";
+      utils = flake-utils;
+      user = import ./user.nix;
   in
   {
     # My `nix-darwin` configs
     darwinConfigurations = {
-      T000dce235 = darwin.lib.darwinSystem {
+      ${user.hostname} = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [ 
           # Main `nix-darwin` config
@@ -30,9 +32,13 @@
             # `home-manager` config
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home.nix;
+            home-manager.users.${user.name} = import ./home.nix;
           }
         ];
+        #
+        # extraSpecialArgs = {
+        #   inherit pkgs;
+        # };
       };
     };
  };

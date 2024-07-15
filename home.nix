@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  username = "A92638031";
+  user = import ./user.nix;
 in 
 {
   home.stateVersion = "24.05";
@@ -14,21 +14,6 @@ in
     ./config/wezterm.nix
     ./config/tools.nix
   ];
-
-  # https://github.com/malob/nixpkgs/blob/master/home/default.nix
-
-  # Direnv, load and unload environment variables depending on the current directory.
-  # https://direnv.net
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  # Htop
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.htop.enable
-  programs.htop.enable = true;
-  programs.htop.settings.show_program_path = true;
-  programs.alacritty.enable = true;
-
 
   home.packages = with pkgs; [
       atuin
@@ -71,6 +56,7 @@ in
       tldr
       wezterm
       wget
+      yazi
       zoxide
       (nerdfonts.override {
        fonts = [
@@ -83,7 +69,7 @@ in
 
   # Misc configuration files --------------------------------------------------------------------{{{
   home.file.".zshrc".source = ./dotfiles/zshrc;
-  home.username = "${username}";
+  home.username = "${user.name}";
 
   home.file.".stack/config.yaml".text = lib.generators.toYAML {} {
     templates = {

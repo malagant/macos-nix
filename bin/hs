@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+set -e
+
+#-------------------------------------------------
+# hs
+#-------------------------------------------------
+# aliasing "home-manager switch" command for flake
+CONFIG_DIR=$HOME/.config/nix
+
+nix --extra-experimental-features "nix-command flakes" \
+  run $CONFIG_DIR/#darwinConfigurations.\"${hostname}\".activationPackage
