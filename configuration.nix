@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 let
-  user = import ./user.nix;
+  homeDir = builtins.getEnv "HOME";
+  user = import "${homeDir}/.config/nix/user.nix";
 in
 {
   # Nix configuration ------------------------------------------------------------------------------

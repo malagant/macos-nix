@@ -1,7 +1,8 @@
 { config, pkgs, lib, ... }:
 let
-  user = import /Users/A92638031/.config/nix/user.nix;
-in 
+  homeDir = builtins.getEnv "HOME";
+  user = import "${homeDir}/.config/nix/user.nix";
+in
 {
   home.stateVersion = "24.05";
 
@@ -16,62 +17,62 @@ in
   ];
 
   home.packages = with pkgs; [
-      atuin
-      awscli2
-      bat
-      byobu
-      # caffeine
-      coreutils
-      curl
-      delta
-      direnv
-      docker
-      docker-compose
-      espanso
-      fd
-      fluxcd
-      fzf
-      fzf-git-sh
-      git
-      google-cloud-sdk
-      helix
-      homesick
-      jq
-      k9s
-      kind
-      kubectl
-      kubectx
-      kubernetes-helm
-      lazydocker
-      lazygit
-      neofetch
-      neovim
-      ollama
-      podman
-      python3
-      ripgrep
-      rustup
-      solargraph
-      starship
-      tldr
-      wezterm
-      wget
-      yazi
-      zoxide
-      (nerdfonts.override {
-       fonts = [
-         "Noto"
-         "Iosevka"
-         "JetBrainsMono"
-       ];
-      })
+    atuin
+    awscli2
+    bat
+    byobu
+    # caffeine
+    coreutils
+    curl
+    delta
+    direnv
+    docker
+    docker-compose
+    espanso
+    fd
+    fluxcd
+    fzf
+    fzf-git-sh
+    git
+    google-cloud-sdk
+    helix
+    homesick
+    jq
+    k9s
+    kind
+    kubectl
+    kubectx
+    kubernetes-helm
+    lazydocker
+    lazygit
+    neofetch
+    neovim
+    ollama
+    podman
+    python3
+    ripgrep
+    rustup
+    solargraph
+    starship
+    tldr
+    wezterm
+    wget
+    yazi
+    zoxide
+    (nerdfonts.override {
+      fonts = [
+        "Noto"
+        "Iosevka"
+        "JetBrainsMono"
+      ];
+    })
   ];
 
   # Misc configuration files --------------------------------------------------------------------{{{
   home.file.".zshrc".source = ./dotfiles/zshrc;
   home.username = "${user.name}";
 
-  home.file.".stack/config.yaml".text = lib.generators.toYAML {} {
+  home.file.".stack/config.yaml".text = lib.generators.toYAML { } {
     templates = {
       scm-init = "git";
       params = {

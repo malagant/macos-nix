@@ -17,7 +17,8 @@
   outputs = inputs@{ nixpkgs, flake-utils, home-manager, darwin, ... }:
     let
       utils = flake-utils;
-      user = import /Users/A92638031/.config/nix/user.nix;
+      homeDir = builtins.getEnv "HOME";
+      user = import "${homeDir}/.config/nix/user.nix";
       # user = import ./user.nix;
     in
     {
@@ -37,10 +38,6 @@
               home-manager.users.${user.name} = import ./home.nix;
             }
           ];
-          #
-          # extraSpecialArgs = {
-          #   inherit pkgs;
-          # };
         };
       };
     };
