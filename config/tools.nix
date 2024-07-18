@@ -1,9 +1,12 @@
 { unstable, ... }:
 {
   programs = {
-    htop = { 
-      enable = true; 
-      settings = { 
+    fzf = {
+      enable = true;
+    };
+    htop = {
+      enable = true;
+      settings = {
         show_program_path = true;
       };
     };

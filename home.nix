@@ -55,6 +55,7 @@ in
     solargraph
     starship
     tldr
+    tree
     wezterm
     wget
     yazi
@@ -69,7 +70,7 @@ in
   ];
 
   # Misc configuration files --------------------------------------------------------------------{{{
-  home.file.".zshrc".source = ./dotfiles/zshrc;
+  # home.file.".zshrc".source = ./dotfiles/zshrc;
   home.username = "${user.name}";
 
   home.file.".stack/config.yaml".text = lib.generators.toYAML { } {
