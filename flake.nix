@@ -9,14 +9,13 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
-    flake-utils.inputs.systems.follows = "systems";
+    # flake-utils.url = "github:numtide/flake-utils";
+    # flake-utils.inputs.systems.follows = "systems";
   };
-
 
   outputs = inputs@{ nixpkgs, flake-utils, home-manager, darwin, ... }:
     let
-      utils = flake-utils;
+      # utils = flake-utils;
       homeDir = builtins.getEnv "HOME";
       user = import "${homeDir}/.config/nix/user.nix";
       # user = import ./user.nix;

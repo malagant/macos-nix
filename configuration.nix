@@ -38,7 +38,6 @@ in
   programs.zsh.enableFzfCompletion = true;
   programs.zsh.enableFzfGit = true;
   programs.zsh.enableFzfHistory = true;
-
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 

@@ -17,6 +17,7 @@ in
   ];
 
   home.packages = with pkgs; [
+    antidote
     atuin
     awscli2
     bat
@@ -79,6 +80,7 @@ in
   # Misc configuration files --------------------------------------------------------------------{{{
   # home.file.".zshrc".source = ./dotfiles/zshrc;
   home.username = "${user.name}";
+  home.homeDirectory = "${user.homeDir}";
 
   home.file.".stack/config.yaml".text = lib.generators.toYAML { } {
     templates = {
