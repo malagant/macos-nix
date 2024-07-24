@@ -37,6 +37,7 @@ in
     google-cloud-sdk
     helix
     homesick
+    jetbrains.webstorm
     jq
     k9s
     kind
