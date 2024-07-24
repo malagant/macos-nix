@@ -70,6 +70,12 @@ in
     })
   ];
 
+  home.shellAliases = {
+    db = "nix run nix-darwin -- switch --impure --flake ~/.config/nix";
+    zs = "source ~/.zshrc";
+    ne = "nvim ~/.config/nix";
+  };
+
   # Misc configuration files --------------------------------------------------------------------{{{
   # home.file.".zshrc".source = ./dotfiles/zshrc;
   home.username = "${user.name}";
@@ -89,5 +95,6 @@ in
   home.sessionVariables = {
     EDITOR = "nvim";
     OLLAMA_API_BASE = "http://127.0.0.1:11434";
+    NIXPKGS_ALLOW_UNFREE = 1;
   };
 }
