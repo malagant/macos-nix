@@ -36,6 +36,7 @@ in
     fzf-git-sh
     git
     google-cloud-sdk
+    hcloud
     helix
     homesick
     jetbrains.webstorm
@@ -45,17 +46,22 @@ in
     kubectl
     kubectx
     kubernetes-helm
+    kustomize
     lazydocker
     lazygit
+    mkcert
     neofetch
     neovim
     ollama
+    packer
     podman
     python3
     ripgrep
     rustup
     solargraph
     starship
+    talosctl
+    terraform
     tldr
     tree
     wezterm

@@ -1,6 +1,14 @@
 {
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      db = "nix run nix-darwin -- switch --impure --flake ~/.config/nix";
+      zs = "source $HOME/.zshrc";
+    };
+    initExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
+
     antidote = {
       enable = true;
       plugins = [

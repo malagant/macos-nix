@@ -49,6 +49,7 @@ in
     docker
     docker-compose
     git
+    grafana
     iterm2
     kitty
     neovim
