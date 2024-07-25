@@ -23,6 +23,7 @@ in
     bat
     byobu
     # caffeine
+		clusterctl
     coreutils
     curl
     delta
