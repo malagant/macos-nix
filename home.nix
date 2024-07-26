@@ -23,6 +23,7 @@ in
     bat
     byobu
     # caffeine
+		cilium-cli
 		clusterctl
     coreutils
     curl
@@ -40,6 +41,7 @@ in
     hcloud
     helix
     homesick
+		hubble
     jetbrains.webstorm
     jq
     k9s
@@ -53,6 +55,7 @@ in
     mkcert
     neofetch
     neovim
+		obsidian
     ollama
     packer
     podman
