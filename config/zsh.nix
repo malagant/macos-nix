@@ -1,9 +1,9 @@
 {
   programs.zsh = {
     enable = true;
-    initExtra = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    '';
+    # initExtra = ''
+    #   eval "$(/opt/homebrew/bin/brew shellenv)"
+    # '';
 
     antidote = {
       enable = true;
