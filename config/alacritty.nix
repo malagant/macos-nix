@@ -27,5 +27,8 @@
     [window]
     opacity = 0.85
     blur = true
+
+    [scrolling]
+    history = 20000
   '';
 }

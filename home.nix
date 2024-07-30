@@ -21,10 +21,11 @@ in
     atuin
     awscli2
     bat
+    bruno
     byobu
     # caffeine
-		cilium-cli
-		clusterctl
+    cilium-cli
+    clusterctl
     coreutils
     curl
     delta
@@ -41,7 +42,7 @@ in
     hcloud
     helix
     homesick
-		hubble
+    hubble
     jetbrains.webstorm
     jq
     k9s
@@ -55,7 +56,7 @@ in
     mkcert
     neofetch
     neovim
-		obsidian
+    obsidian
     ollama
     packer
     podman
