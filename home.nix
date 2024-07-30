@@ -26,6 +26,7 @@ in
     # caffeine
     cilium-cli
     clusterctl
+		cmctl
     coreutils
     curl
     delta
@@ -47,6 +48,7 @@ in
     jq
     k9s
     kind
+		kluctl
     kubectl
     kubectx
     kubernetes-helm
@@ -72,6 +74,7 @@ in
     wezterm
     wget
     yazi
+		yq
     zoxide
     (nerdfonts.override {
       fonts = [
