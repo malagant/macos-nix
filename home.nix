@@ -9,11 +9,11 @@ in
   imports = [
     ./config/alacritty.nix
     ./config/git.nix
-    ./config/zsh.nix
     ./config/prompt.nix
     ./config/tmux.nix
-    ./config/wezterm.nix
     ./config/tools.nix
+    ./config/wezterm.nix
+    ./config/zsh.nix
   ];
 
   home.packages = with pkgs; [
@@ -26,7 +26,7 @@ in
     # caffeine
     cilium-cli
     clusterctl
-		cmctl
+    cmctl
     coreutils
     curl
     delta
@@ -48,7 +48,7 @@ in
     jq
     k9s
     kind
-		kluctl
+    kluctl
     kubectl
     kubectx
     kubernetes-helm
@@ -65,6 +65,7 @@ in
     python3
     ripgrep
     rustup
+    sketchybar-app-font
     solargraph
     starship
     talosctl
@@ -74,7 +75,7 @@ in
     wezterm
     wget
     yazi
-		yq
+    yq
     zoxide
     (nerdfonts.override {
       fonts = [
