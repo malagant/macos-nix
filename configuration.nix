@@ -77,6 +77,8 @@ in
   # `home-manager` currently has issues adding them to `~/Applications`
   # Issue: https://github.com/nix-community/home-manager/issues/1341
   environment.systemPackages = with pkgs; [
+    luarocks
+    nmap
     alacritty
     docker
     docker-compose
@@ -84,10 +86,11 @@ in
     grafana
     iterm2
     kitty
+    lua
     neovim
     podman
-    podman-tui
     podman-compose
+    podman-tui
     raycast
     vim
     wezterm
@@ -100,6 +103,7 @@ in
   # Keyboard
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
+  system.defaults.NSGlobalDomain._HIHideMenuBar = true;
 
   users.users.${user.name}.home = "${user.homeDir}";
 }

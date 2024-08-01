@@ -59,7 +59,6 @@ in
     neofetch
     neovim
     obsidian
-    ollama
     packer
     podman
     python3
