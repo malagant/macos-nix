@@ -49,6 +49,7 @@ in
     k9s
     kind
     kluctl
+    kubecolor
     kubectl
     kubectx
     kubernetes-helm
@@ -58,6 +59,7 @@ in
     mkcert
     neofetch
     neovim
+    nodejs_20
     obsidian
     packer
     podman
@@ -73,6 +75,7 @@ in
     tree
     wezterm
     wget
+    yarn
     yazi
     yq
     zoxide
@@ -89,6 +92,9 @@ in
     db = "nix run nix-darwin -- switch --impure --flake ~/.config/nix";
     zs = "source ~/.zshrc";
     ne = "nvim ~/.config/nix";
+    k = "kubecolor";
+    kgn = "k get nodes";
+    kgns = "k get ns";
   };
 
   # Misc configuration files --------------------------------------------------------------------{{{
