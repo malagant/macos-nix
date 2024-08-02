@@ -40,11 +40,12 @@ in
   programs.zsh.enableFzfHistory = true;
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
+
   services.yabai = {
     enable = true;
     enableScriptingAddition = true;
     config = {
-      focus_follows_mouse = "autoraise";
+      focus_follows_mouse = "off";
       mouse_follows_focus = "off";
       window_placement = "second_child";
       window_opacity = "off";
@@ -58,6 +59,8 @@ in
       		yabai -m rule --add app='System Preferences' manage=off
     '';
   };
+
+  homebrew.enable = true;
 
   services.sketchybar = {
     enable = true;
