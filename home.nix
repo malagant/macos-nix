@@ -66,7 +66,6 @@ in
     python3
     ripgrep
     rustup
-    sketchybar-app-font
     solargraph
     starship
     talosctl
@@ -107,6 +106,16 @@ in
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/sketchybar/sketchybarrc";
       onChange = ''
         chmod +x ${config.xdg.configHome}/sketchybar/sketchybarrc
+        sketchybar --reload
+      '';
+    };
+  };
+
+  xdg.configFile = {
+    "skhd/skhdrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/skhd/skhdrc";
+      onChange = ''
+        chmod +x ${config.xdg.configHome}/skhd/skhdrc
       '';
     };
   };
