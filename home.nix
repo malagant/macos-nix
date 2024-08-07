@@ -23,13 +23,6 @@ in
     bat
     bruno
     byobu
-    # caffeine
-    cilium-cli
-    clusterctl
-    cmctl
-    coreutils
-    curl
-    delta
     direnv
     docker
     docker-compose
@@ -109,9 +102,6 @@ in
         sketchybar --reload
       '';
     };
-  };
-
-  xdg.configFile = {
     "skhd/skhdrc" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/skhd/skhdrc";
       onChange = ''
