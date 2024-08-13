@@ -47,7 +47,7 @@ in
     brews = [
       # "yabai"
       # "skhd"
-      "borderszz"
+      "borders"
       "sketchybar"
     ];
     casks = [ "nikitabobko/tap/aerospace" ];
