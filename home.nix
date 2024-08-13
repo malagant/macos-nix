@@ -95,14 +95,14 @@ in
   home.homeDirectory = "${user.homeDir}";
 
   xdg.configFile = {
-    "sketchybar/sketchybarrc" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/sketchybar/sketchybarrc";
-      onChange = ''
-              chmod +x ${config.xdg.configHome}/sketchybar/sketchybarrc
-        			/usr/bin/rsync -av ${config.home.homeDirectory}/.config/nix/dotfiles/sketchybar ${config.xdg.configHome} --exclude "${config.home.homeDirectory}/.config/nix/dotfiles/sketchybar/sketchybarrc"
-              /opt/homebrew/bin/sketchybar --reload
-      '';
-    };
+    # "sketchybar/sketchybarrc" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/sketchybar/sketchybarrc";
+    #   onChange = ''
+    #           chmod +x ${config.xdg.configHome}/sketchybar/sketchybarrc
+    #     			/usr/bin/rsync -av ${config.home.homeDirectory}/.config/nix/dotfiles/sketchybar ${config.xdg.configHome} --exclude "${config.home.homeDirectory}/.config/nix/dotfiles/sketchybar/sketchybarrc"
+    #           /opt/homebrew/bin/sketchybar --reload
+    #   '';
+    # };
     "aerospace/aerospace.toml" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/aerospace/aerospace.toml";
     };
