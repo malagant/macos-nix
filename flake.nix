@@ -9,10 +9,9 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixd.url = "github:nix-community/nixd";
   };
 
-  outputs = inputs@{ nixd, nixpkgs, flake-utils, home-manager, darwin, ... }:
+  outputs = inputs@{ nixpkgs, flake-utils, home-manager, darwin, ... }:
     let
       # utils = flake-utils;
       homeDir = builtins.getEnv "HOME";

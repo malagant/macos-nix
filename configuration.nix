@@ -43,13 +43,14 @@ in
 
   homebrew = {
     enable = true;
-    taps = [ "koekeishiya/formulae" "FelixKratz/formulae" ];
+    taps = [ "FelixKratz/formulae" ];
     brews = [
-      "yabai"
-      "skhd"
+      # "yabai"
+      # "skhd"
+      "borderszz"
       "sketchybar"
     ];
-    casks = [ ];
+    casks = [ "nikitabobko/tap/aerospace" ];
   };
 
   # Apps
