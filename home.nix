@@ -25,6 +25,7 @@ in
     byobu
     clusterctl
     direnv
+    discord
     docker
     docker-compose
     espanso
