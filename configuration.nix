@@ -48,7 +48,6 @@ in
       # "yabai"
       # "skhd"
       "borders"
-      "sketchybar"
     ];
     casks = [ "nikitabobko/tap/aerospace" ];
   };
