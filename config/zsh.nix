@@ -3,6 +3,7 @@
     enable = true;
     initExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(atuin init zsh)"
     '';
 
     antidote = {
