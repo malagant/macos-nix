@@ -104,6 +104,9 @@ in
     "starship.toml" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/starship/starship.toml";
     };
+    "config.toml" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/atuin/config.toml";
+    };
   };
 
   home.file = {
