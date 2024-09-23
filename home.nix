@@ -23,6 +23,9 @@ in
     bat
     bruno
     byobu
+    cargo-audit
+    cargo-binutils
+    cargo-watch
     clusterctl
     direnv
     discord
@@ -51,6 +54,7 @@ in
     kustomize
     lazydocker
     lazygit
+    llvm_18
     mkcert
     neofetch
     neovim
@@ -72,6 +76,7 @@ in
     yarn
     yazi
     yq
+    zig
     zoxide
     (nerdfonts.override {
       fonts = [
@@ -89,7 +94,11 @@ in
     k = "kubecolor";
     kgn = "k get nodes";
     kgns = "k get ns";
+    kgp = "k get pods";
+    kl = "k logs";
     clc = "/usr/local/bin/clusterctl";
+    ve = "nvim ~/.config/nvim";
+    k8s-show-ns = " kubectl api-resources --verbs=list --namespaced -o name  | xargs -n 1 kubectl get --show-kind --ignore-not-found  -n";
   };
 
   # Misc configuration files --------------------------------------------------------------------{{{

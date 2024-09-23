@@ -84,6 +84,7 @@ in
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
   system.defaults.NSGlobalDomain._HIHideMenuBar = true;
-
+  system.stateVersion = 5;
   users.users.${user.name}.home = "${user.homeDir}";
+  ids.gids.nixbld = 30000;
 }
