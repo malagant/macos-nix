@@ -59,6 +59,7 @@ in
     neofetch
     neovim
     nodejs_20
+    nushell
     obsidian
     packer
     podman

@@ -45,8 +45,6 @@ in
     enable = true;
     taps = [ "FelixKratz/formulae" ];
     brews = [
-      # "yabai"
-      # "skhd"
       "borders"
     ];
     casks = [ "nikitabobko/tap/aerospace" ];
@@ -83,7 +81,18 @@ in
   # Keyboard
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
-  system.defaults.NSGlobalDomain._HIHideMenuBar = true;
+  system.defaults = {
+    NSGlobalDomain =
+      {
+        AppleICUForce24HourTime = true;
+        _HIHideMenuBar = false;
+        AppleShowAllExtensions = true;
+        KeyRepeat = 2;
+      };
+    loginwindow.GuestEnabled = false;
+    finder.FXPreferredViewStyle = "clmv";
+  };
+
   system.stateVersion = 5;
   users.users.${user.name}.home = "${user.homeDir}";
   ids.gids.nixbld = 30000;
