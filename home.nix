@@ -51,6 +51,7 @@ in
     kubectl
     kubectx
     kubernetes-helm
+    kubeseal
     kustomize
     lazydocker
     lazygit

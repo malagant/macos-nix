@@ -60,6 +60,7 @@ in
     docker
     docker-compose
     git
+    gnupg
     grafana
     iterm2
     kitty
@@ -70,6 +71,7 @@ in
     podman-compose
     podman-tui
     raycast
+    sops
     vim
     wezterm
     wget
