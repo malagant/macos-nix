@@ -126,7 +126,7 @@ in
         scm-init = "git";
         params = {
           author-name = "Michael Johann"; # config.programs.git.userName;
-          author-email = "michael.johann@telekom.de"; # config.programs.git.userEmail;
+          author-email = "mjohann@rails-experts.com"; # config.programs.git.userEmail;
           github-username = "malagant";
         };
       };
