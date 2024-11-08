@@ -7,6 +7,7 @@ set -e
 #-------------------------------------------------
 # aliasing "home-manager switch" command for flake
 CONFIG_DIR=$HOME/.config/nix
+HOSTNAME=$(hostname) # Get the current hostname
 
 nix --extra-experimental-features "nix-command flakes" \
-  run $CONFIG_DIR/#darwinConfigurations.\"${hostname}\".activationPackage
+  run --impure $CONFIG_DIR/#homeConfigurations.\"${HOSTNAME}\".activationPackage
