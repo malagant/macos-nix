@@ -17,6 +17,7 @@ in
   ];
 
   home.packages = with pkgs; [
+    aerospace
     antidote
     atuin
     awscli2
@@ -73,12 +74,12 @@ in
     terraform
     tldr
     tree
+    vscode
     wezterm
     wget
     yarn
     yazi
     yq
-    zig
     zoxide
     (nerdfonts.override {
       fonts = [
