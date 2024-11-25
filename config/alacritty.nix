@@ -1,7 +1,7 @@
 {
   programs.alacritty.enable = true;
   home.file.".config/alacritty/alacritty.toml".text = ''
-    import = [
+    general.import = [
       "~/.config/alacritty/themes/themes/tokyo-night.toml"
     ]
 

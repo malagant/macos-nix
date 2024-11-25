@@ -85,6 +85,7 @@ in
       fonts = [
         "Noto"
         "Iosevka"
+        "D2Coding"
         "JetBrainsMono"
       ];
     })
@@ -118,6 +119,9 @@ in
     };
     "config.toml" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/atuin/config.toml";
+    };
+    "karabiner/karabiner.json" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/karabiner/karabiner.json";
     };
   };
 

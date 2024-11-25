@@ -47,7 +47,10 @@ in
     brews = [
       "borders"
     ];
-    casks = [ "nikitabobko/tap/aerospace" ];
+    casks = [
+      "nikitabobko/tap/aerospace"
+      "karabiner-elements"
+    ];
   };
 
   # Apps
@@ -97,5 +100,6 @@ in
 
   system.stateVersion = 5;
   users.users.${user.name}.home = "${user.homeDir}";
-ids.gids.nixbld = 350;
+  ids.gids.nixbld = 30000;
+  # ids.gids.nixbld = 350;
 }
