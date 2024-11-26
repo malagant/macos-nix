@@ -1,0 +1,58 @@
+matches:
+  - trigger: "rmorig"
+    replace: "rm -fr **/*.orig"
+  - trigger: ":kctl"
+    replace: "alias k='kubectl'"
+  - trigger: ":flush"
+    replace: "php -r 'require \"app/Mage.php\"; Mage::app()->getCacheInstance()->flush();'"
+  - trigger: ":mm"
+    replace: "mysql -u $MAGENTO_DB_USER -p$MAGENTO_DB_PASSWORD -h $MAGENTO_DB_HOST $MAGENTO_DB_NAME"
+  - trigger: ":mw"
+    replace: "mysql -u $WORDPRESS_DB_USER -p$WORDPRESS_DB_PASSWORD -h $WORDPRESS_DB_HOST $WORDPRESS_DB_NAME"
+  - trigger: ":kcb"
+    replace: source <(kubectl completion bash)
+  - trigger: ":kcz"
+    replace: source <(kubectl completion zsh)
+  - trigger: ":do"
+    replace: "export do='--dry-run=client -o yaml'"
+  - trigger: ":now"
+    replace: "export now='--force --grace-period 0'"
+  - trigger: ":vim"
+    replace: |-
+      set tabstop=2
+      set expandtab
+      set shiftwidth=2
+      set relativenumber
+  - trigger: "mjd"
+    replace: m.johann@digitalxperts.de
+  - trigger: "mjr"
+    replace: mjohann@rails-experts.com
+  - trigger: "iot"
+    replace: info@openshift-training.io
+  - trigger: "mjt"
+    replace: michael.johann@telekom.de
+  - trigger: ":date"
+    replace: "{{mydate}}"
+  - trigger: ":iban"
+    replace: "DE32100110012625133518"
+  - trigger: ":vat"
+    replace: "DE296797128"
+  - trigger: ":bic"
+    replace: "NTSBDEB1XXX"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d.%m.%Y"
+  - trigger: ":mfg"
+    replace: |-
+      Viele Grüße
+      Michael Johann
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: echo Hello from your shell
+

@@ -111,6 +111,9 @@ in
   home.homeDirectory = "${user.homeDir}";
 
   xdg.configFile = {
+    "espanso/match/base.yml" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/espanso/match/base.yml";
+    };
     "aerospace/aerospace.toml" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/dotfiles/aerospace/aerospace.toml";
     };

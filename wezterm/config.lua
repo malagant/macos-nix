@@ -29,7 +29,7 @@ return {
 	window_background_opacity = 0.9,
 	window_background_image = "./beach.jpg",
 	font = wezterm.font("Iosevka Nerd Font"),
-	font_size = 18.0,
+	font_size = 22.0,
 	enable_tab_bar = true,
 	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 		local edge_background = "#0b0022"
