@@ -9,4 +9,4 @@ set -e
 CONFIG_DIR=$HOME/.config/nix
 
 nix --extra-experimental-features "nix-command flakes" \
-  run $CONFIG_DIR/#darwinConfigurations.\"${hostname}\".activationPackage
+  run $CONFIG_DIR/#homeConfigurations.$(hostname).activationPackage --impure

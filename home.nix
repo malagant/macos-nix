@@ -37,6 +37,7 @@ in
     fluxcd
     fzf
     fzf-git-sh
+    gcc
     git
     google-cloud-sdk
     hcloud
@@ -81,14 +82,6 @@ in
     yazi
     yq
     zoxide
-    (nerdfonts.override {
-      fonts = [
-        "Noto"
-        "Iosevka"
-        "D2Coding"
-        "JetBrainsMono"
-      ];
-    })
   ];
 
   home.shellAliases = {
